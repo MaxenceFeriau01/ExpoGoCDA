@@ -1,16 +1,14 @@
-import Human from "@/components/Human/Human";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
-
-
+import { Image } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { Human } from '../../components/Human/Human';
 export default function HomeScreen() {
 return (
-<ThemedView style={{ flex: 1, justifyContent: "center", alignItems: "center"}} >
-<Human />
-<Human />
-<ThemedText>
-Fin de l écran
-</ThemedText>
-</ThemedView>
+<SafeAreaProvider>
+<SafeAreaView>
+<Human firstName="pierre" name="DEFAUQUET" age={28} />
+<Image style={{height: 200, width: 200}} source={{uri :
+"https://www.assuropoil.fr/wp-content/uploads/berger-australien.jpg"}} />
+</SafeAreaView>
+</SafeAreaProvider>
 );
 }
